@@ -1,0 +1,139 @@
+{
+  "fecha": "2026-10-29T17:48:33.910Z",
+  "antes": {
+    "nombre": "antes",
+    "ancho": 1365,
+    "alto": 900,
+    "cache": false,
+    "escenario": "Carga inicial sin búsqueda, sin desplazamiento",
+    "peticiones": 14,
+    "bytesTransferidos": 575562,
+    "bytesCSS": 235676,
+    "recursos": [
+      {
+        "url": "http://127.0.0.1:5173/",
+        "tipo": "Document"
+      },
+      {
+        "url": "http://127.0.0.1:5173/@vite/client",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/css/main.css",
+        "tipo": "Stylesheet"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/main.js?t=1793296011170",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/bootstrap_js_dist_collapse.js?v=398996d4",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/api.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/estado.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/render.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/animaciones.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/formulario.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/@fs/C:/Users/andre/.codex/.chatgpt-projects/g-p-691a2e5888288191b64ca681cdd30b3a/tarea-2/node_modules/vite/dist/client/env.mjs",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/chunk-GUDAB6FM.js?v=398996d4",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/bootstrap_js_dist_modal.js?v=398996d4",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/validacion.js",
+        "tipo": "Script"
+      }
+    ]
+  },
+  "despues": {
+    "nombre": "despues",
+    "ancho": 1365,
+    "alto": 900,
+    "cache": false,
+    "escenario": "Carga inicial sin búsqueda, sin desplazamiento",
+    "peticiones": 14,
+    "bytesTransferidos": 514304,
+    "bytesCSS": 174418,
+    "recursos": [
+      {
+        "url": "http://127.0.0.1:5173/",
+        "tipo": "Document"
+      },
+      {
+        "url": "http://127.0.0.1:5173/@vite/client",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/css/main.css",
+        "tipo": "Stylesheet"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/main.js?t=1793296011170",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/bootstrap_js_dist_collapse.js?v=398996d4",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/api.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/estado.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/render.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/animaciones.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/formulario.js",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/@fs/C:/Users/andre/.codex/.chatgpt-projects/g-p-691a2e5888288191b64ca681cdd30b3a/tarea-2/node_modules/vite/dist/client/env.mjs",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/chunk-GUDAB6FM.js?v=398996d4",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/bootstrap_js_dist_modal.js?v=398996d4",
+        "tipo": "Script"
+      },
+      {
+        "url": "http://127.0.0.1:5173/js/validacion.js",
+        "tipo": "Script"
+      }
+    ]
+  }
+}

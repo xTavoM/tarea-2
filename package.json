@@ -1,0 +1,18 @@
+{
+  "name": "estanteria-comun-tarea-2",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "buscador-js",
+    "tablero-react"
+  ],
+  "scripts": {
+    "dev:js": "npm run dev --workspace buscador-js",
+    "dev:react": "npm run dev --workspace tablero-react",
+    "sass": "npm run sass --workspace buscador-js",
+    "build": "npm run build --workspaces"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

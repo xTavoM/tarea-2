@@ -1,0 +1,21 @@
+{
+  "name": "buscador-js",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sass": "sass --load-path=../node_modules --quiet-deps --silence-deprecation=import,global-builtin,color-functions scss/main.scss css/main.css --style=compressed --no-source-map",
+    "sass:watch": "npm run sass -- --watch",
+    "predev": "npm run sass",
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "npm run sass && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort"
+  },
+  "dependencies": {
+    "bootstrap": "~5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.93.0",
+    "vite": "^7.0.0"
+  }
+}

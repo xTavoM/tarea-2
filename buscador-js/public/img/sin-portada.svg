@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="320" viewBox="0 0 240 320">
+  <rect width="240" height="320" rx="10" fill="#245748" />
+  <path d="M24 0v320" stroke="#173d32" stroke-width="12" />
+  <path d="M55 50h135M55 270h135" stroke="#c3ac78" />
+  <text
+    x="123"
+    y="130"
+    text-anchor="middle"
+    font-family="Georgia,serif"
+    font-size="26"
+    fill="#fff9e6"
+  >
+    Estantería
+  </text>
+  <text
+    x="123"
+    y="165"
+    text-anchor="middle"
+    font-family="Georgia,serif"
+    font-size="26"
+    fill="#fff9e6"
+  >
+    Común
+  </text>
+  <text
+    x="123"
+    y="225"
+    text-anchor="middle"
+    font-family="Arial,sans-serif"
+    font-size="12"
+    fill="#dce8cf"
+  >
+    Portada no disponible
+  </text>
+</svg>

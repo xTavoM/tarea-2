@@ -1,0 +1,169 @@
+:root {
+  --club-espacio: 1.25rem;
+  --club-oro: #937745;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-width: 320px;
+}
+.navbar {
+  border-bottom: 1px solid $border-color;
+  background: #fffef9;
+}
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+}
+.marca__sello {
+  display: inline-grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: $primary;
+  color: white;
+  border-radius: 50%;
+  font-family: Georgia, serif;
+}
+.hero {
+  padding: espacio(10) 0 espacio(6);
+  max-width: 53rem;
+}
+.eyebrow {
+  color: #806735;
+  font-size: 0.77rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h1,
+.titulo-seccion {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+.intro {
+  color: #607168;
+  font-size: 1.1rem;
+  max-width: 39rem;
+}
+.panel-club {
+  @include superficie;
+  margin-bottom: espacio(4);
+}
+.cabecera-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: espacio(3);
+}
+.tarjeta-libro {
+  height: 100%;
+  overflow: hidden;
+  &__imagen {
+    width: 100%;
+    height: 15rem;
+    object-fit: contain;
+    padding: 1.3rem;
+    background: #eeeee2;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+}
+.estado-busqueda {
+  min-height: 3.4rem;
+}
+.autores-lista {
+  display: grid;
+  gap: var(--club-espacio);
+}
+.autor-grupo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.75rem;
+}
+.error-campo {
+  display: block;
+  min-height: 1.3rem;
+  font-size: 0.85rem;
+  color: #ad2939;
+}
+.lectura {
+  opacity: 1;
+  transition: opacity 0.22s ease;
+}
+.lectura.is-entering,
+.lectura.is-leaving {
+  opacity: 0;
+}
+.lectura.is-changed {
+  animation: destacar 0.38s ease;
+}
+@keyframes destacar {
+  50% {
+    opacity: 0.45;
+  }
+}
+.resumen-club {
+  @include superficie;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--club-espacio);
+  &__dato {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+  }
+  @media (min-width: 48rem) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+footer {
+  color: #68796d;
+  padding: espacio(5) 0;
+  font-size: 0.9rem;
+}
+button,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+@media (max-width: 36rem) {
+  .panel-club {
+    padding: espacio(3);
+  }
+  .hero {
+    padding-top: espacio(6);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .lectura {
+    transition-duration: 0.001s;
+  }
+  .lectura.is-changed {
+    animation-duration: 0.001s;
+  }
+}

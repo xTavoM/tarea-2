@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Descubre libros y propone la próxima lectura de Estantería Común."
+    />
+    <title>Descubrir libros · Estantería Común</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md" aria-label="Navegación principal">
+      <div class="container py-2">
+        <a class="navbar-brand marca" href="#"
+          ><span class="marca__sello">ec</span> Estantería Común</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Abrir navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="menu">
+          <div class="navbar-nav gap-2">
+            <a class="nav-link active" href="#explorar">Explorar</a
+            ><a class="nav-link" href="#mis-lecturas"
+              >Mis lecturas <span id="cantidad" class="badge text-bg-primary">0</span></a
+            ><a class="nav-link" href="#proponer">Proponer un libro</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="container">
+      <header class="hero">
+        <p class="eyebrow">Un club, muchas historias</p>
+        <h1>Tu próxima lectura<br />empieza aquí.</h1>
+        <p class="intro mt-3">
+          Explora el catálogo de Open Library, guarda los libros que te inspiran y
+          comparte una propuesta con el club.
+        </p>
+      </header>
+      <section class="resumen-club mb-4" aria-label="Cómo participar en el club">
+        <div class="resumen-club__dato">
+          <strong>01</strong><span>Descubre una historia</span>
+        </div>
+        <div class="resumen-club__dato">
+          <strong>02</strong><span>Organiza tus lecturas</span>
+        </div>
+        <div class="resumen-club__dato">
+          <strong>03</strong><span>Compártela con el club</span>
+        </div>
+      </section>
+      <section class="panel-club" id="explorar" aria-labelledby="titulo-explorar">
+        <div class="cabecera-seccion">
+          <h2 class="titulo-seccion h3 mb-0" id="titulo-explorar">Descubrir libros</h2>
+          <span class="small text-secondary">Catálogo público · Open Library</span>
+        </div>
+        <form id="busqueda" class="row g-2" role="search" novalidate>
+          <div class="col-12 col-sm">
+            <label for="consulta" class="visually-hidden">Título o autor</label
+            ><input
+              class="form-control form-control-lg"
+              id="consulta"
+              name="consulta"
+              type="search"
+              required
+              maxlength="150"
+              placeholder="Busca por título o autor..."
+            />
+          </div>
+          <div class="col-12 col-sm-auto">
+            <button class="btn btn-primary btn-lg w-100" type="submit">
+              Buscar libros
+            </button>
+          </div>
+        </form>
+        <div
+          id="busqueda-aviso"
+          class="estado-busqueda mt-3"
+          data-estado="inicial"
+          role="status"
+          aria-live="polite"
+        >
+          Escribe un título o autor para comenzar.
+        </div>
+        <div id="resultados" class="row g-3" aria-busy="false"></div>
+      </section>
+      <section class="panel-club" id="mis-lecturas" aria-labelledby="titulo-lecturas">
+        <div class="cabecera-seccion">
+          <h2 class="titulo-seccion h3 mb-0" id="titulo-lecturas">Mis lecturas</h2>
+          <span class="small text-secondary">Tu selección durante esta sesión</span>
+        </div>
+        <div id="lista-aviso" role="status" aria-live="polite"></div>
+        <p id="lista-vacia" class="text-secondary">
+          Aún no has guardado libros. Agrega uno desde los resultados.
+        </p>
+        <div class="table-responsive" id="tabla-contenedor" hidden>
+          <table class="table align-middle">
+            <caption class="visually-hidden">
+              Libros guardados y acciones de lectura
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Libro</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="lecturas"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel-club" id="proponer" aria-labelledby="titulo-proponer">
+        <p class="eyebrow">La próxima sesión la elegimos juntos</p>
+        <h2 class="titulo-seccion h3" id="titulo-proponer">Propón una lectura</h2>
+        <p class="text-secondary">
+          Cuéntanos por qué debería ser el próximo libro del club. Todos los campos son
+          obligatorios.
+        </p>
+        <form id="propuesta" novalidate>
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="form-label" for="titulo">Título</label
+              ><input
+                class="form-control"
+                id="titulo"
+                name="titulo"
+                required
+                minlength="2"
+                maxlength="180"
+                aria-describedby="error-titulo"
+              /><small id="error-titulo" class="error-campo"></small>
+            </div>
+            <fieldset class="col-12">
+              <legend class="fs-6">
+                Autores <span class="text-secondary">(entre 1 y 5)</span>
+              </legend>
+              <div id="autores" class="autores-lista"></div>
+              <button
+                id="agregar-autor"
+                class="btn btn-outline-primary btn-sm mt-2"
+                type="button"
+              >
+                + Agregar autor
+              </button>
+            </fieldset>
+            <div class="col-sm-6">
+              <label class="form-label" for="anio">Año de publicación</label
+              ><input
+                class="form-control"
+                id="anio"
+                name="anio"
+                type="number"
+                required
+                min="1"
+                step="1"
+                aria-describedby="error-anio"
+              /><small id="error-anio" class="error-campo"></small>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="paginas">Cantidad de páginas</label
+              ><input
+                class="form-control"
+                id="paginas"
+                name="paginas"
+                type="number"
+                required
+                min="1"
+                step="1"
+                max="100000"
+                aria-describedby="error-paginas"
+              /><small id="error-paginas" class="error-campo"></small>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="genero">Género</label
+              ><select
+                class="form-select"
+                id="genero"
+                name="genero"
+                required
+                aria-describedby="error-genero"
+              >
+                <option value="">Selecciona un género</option>
+                <option>Novela</option>
+                <option>Cuento</option>
+                <option>Poesía</option>
+                <option>Ensayo</option>
+                <option>No ficción</option>
+                <option>Otro</option></select
+              ><small id="error-genero" class="error-campo"></small>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="correo">Tu correo</label
+              ><input
+                class="form-control"
+                id="correo"
+                name="correo"
+                type="email"
+                required
+                maxlength="254"
+                autocomplete="email"
+                aria-describedby="error-correo"
+              /><small id="error-correo" class="error-campo"></small>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label" for="fecha">Fecha propuesta de la sesión</label
+              ><input
+                class="form-control"
+                id="fecha"
+                name="fecha"
+                type="date"
+                required
+                aria-describedby="error-fecha"
+              /><small id="error-fecha" class="error-campo"></small>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="motivo">¿Por qué lo propones?</label
+              ><textarea
+                class="form-control"
+                id="motivo"
+                name="motivo"
+                rows="3"
+                required
+                minlength="20"
+                maxlength="1500"
+                aria-describedby="error-motivo motivo-ayuda"
+              ></textarea
+              ><small id="motivo-ayuda" class="text-secondary"
+                >Entre 20 y 1500 caracteres.</small
+              ><small id="error-motivo" class="error-campo"></small>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Enviar propuesta</button>
+          <p class="small text-secondary mt-2">
+            Envío a un servicio de pruebas: la propuesta no se guarda permanentemente.
+          </p>
+          <div id="propuesta-aviso" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+      <div
+        class="modal fade"
+        id="detalle"
+        tabindex="-1"
+        aria-labelledby="detalle-titulo"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 id="detalle-titulo" class="modal-title fs-5"></h2>
+              <button
+                class="btn-close"
+                type="button"
+                data-bs-dismiss="modal"
+                aria-label="Cerrar detalle"
+              ></button>
+            </div>
+            <div class="modal-body" id="detalle-cuerpo"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="container">
+      Estantería Común · Historias que nos acercan.<span class="d-block mt-1"
+        >La lista de lecturas se conserva mientras esta página permanezca abierta.</span
+      >
+    </footer>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

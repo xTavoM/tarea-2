@@ -1,0 +1,15 @@
+{
+  "fecha": "2026-10-29T17:53:03.402Z",
+  "escenario": "Reintento después de HTTP 503; pausa antes de fetch",
+  "ubicacion": {
+    "scriptId": "8",
+    "lineNumber": 5,
+    "columnNumber": 20
+  },
+  "expresion": "({estado: document.querySelector(\"#busqueda-aviso\").dataset.estado, texto: document.querySelector(\"#busqueda-aviso\").textContent, botonDeshabilitado: document.querySelector(\"#busqueda button\").disabled})",
+  "resultado": {
+    "estado": "cargando",
+    "texto": "Buscando en Open Library...",
+    "botonDeshabilitado": true
+  }
+}
